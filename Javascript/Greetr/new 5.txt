@@ -1,0 +1,43 @@
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;pre class="brush: xml; toolbar: false; gutter:false"&gt;&lt;ns2:emailArticleResult xmlns:ns2="http://bindings.egain.com/ws/model/v3/gen/ss" xmlns="http://bindings.egain.com/ws/model/v3/gen/common" xmlns:ns4="http://bindings.egain.com/ws/model/v3/gen/kb" xmlns:ns3="http://bindings.egain.com/ws/model/v3/gen/social/community" xmlns:ns5="http://bindings.egain.com/ws/model/v3/gen/meta" xmlns:ns6="http://bindings.egain.com/ws/model/v3/gen/general" xmlns:ns7="http://bindings.egain.com/ws/model/v3/gen/gh"&gt;
+    &lt;callInfo&gt;
+        &lt;httpStatus&gt;201&lt;/httpStatus&gt;
+        &lt;portalId&gt;1000&lt;/portalId&gt;
+        &lt;resource&gt;email&lt;/resource&gt;
+        &lt;subResource&gt;&lt;/subResource&gt;
+        &lt;resourceId&gt;2037&lt;/resourceId&gt;
+        &lt;timestamp&gt;Tue May 07 20:27:14 GMT 2013&lt;/timestamp&gt;
+        &lt;duration&gt;6028&lt;/duration&gt;
+        &lt;status&gt;success&lt;/status&gt;
+        &lt;wsVersion&gt;11.0&lt;/wsVersion&gt;
+        &lt;dataVersion&gt;3.0&lt;/dataVersion&gt;
+        &lt;userType&gt;customer&lt;/userType&gt;
+    &lt;/callInfo&gt;
+    &lt;pagingInfo&gt;
+        &lt;count&gt;0&lt;/count&gt;
+        &lt;pageNumber&gt;0&lt;/pageNumber&gt;
+        &lt;rangeStart&gt;0&lt;/rangeStart&gt;
+        &lt;rangeSize&gt;0&lt;/rangeSize&gt;
+        &lt;maxRange&gt;0&lt;/maxRange&gt;
+    &lt;/pagingInfo&gt;
+&lt;/ns2:emailArticleResult&gt;
+
+const f1 = (num1, num2) => {
+}
+
+const arr = [1, 2, 3];
+const squares = arr.map(function(x) {
+	return x*x;
+});
+
+const squares = arr.map( x => x*x;);
+
+const show = {
+	likes : 0;
+	incrementCount() {
+		setTimeout(() => {
+			this.likes += 1;
+			console.log(this.likes);
+		}, 1000);
+	}
+};

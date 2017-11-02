@@ -1,0 +1,169 @@
+#### (+) Get Bookmarks
+
+        Retrieve bookmarks from a portal for an Agent/Customer. 
+
+        ##### **Authentication**
+
+        All requests to this API require authentication and must contain a valid X-egain-session request header.
+
+        A valid X-egain-session header can be obtained by calling one of the following:
+
+        * Login API - If the user is an agent or the user is a customer accessing an authenticated portal.
+        * Anonymous Session Creation API - If the user is a customer accessing a portal that does not require authentication.
+
+        ##### **Backward Compatibility:**
+
+        Clients of previous versions of the Knowledge Access API that did not require the X-egain-session request header for customers accessing unauthenticated portals will continue to be supported.
+        
+        eGain is announcing the deprecation of this functionality in the current release and expects to remove support in a future release. All new API clients must always use the X-egain-session header. 
+        
+        ##### **Example Uses**
+
+        GET .../v11/ss/bookmark
+        
+        #### (+)Request
+
+        ##### **APIs**
+        Method|	URL|	Description
+        ----- | --- | -------------
+        GET |	ws/v11/ss/bookmark |	Retrieve all bookmarks. 
+        
+        ##### **Path and Query Parameters**
+        Name |	Description |	Type 	Required? |	Default value, if optional
+        ---- | ------------ | --------------- | --------------------------
+        portalId |	The ID of the portal being accessed. | 	long |	yes 	|
+        usertype |	The type of user. Possible values are: customer, agent | string	| Yes	| 
+       
+        ##### **Request Headers**
+        Name	|Description
+        ------- | ----------
+        Accept	|application/xml or application/json
+        Content-Type |	application/x-www-form-urlencoded
+        X-egain-session	|the session UUID.
+        
+        ##### **Request Body**
+        
+        None.
+        
+        ##### **XSD for Request Body**
+        Not applicable.
+
+        ##### **SampleRequest JSON**
+        Not applicable.
+        
+        ##### **SampleRequestXML**
+        Not applicable.
+        
+        #### (+)Response 
+        
+        Output can be generated in XML or JSON format. The XML schema is defined in the bookmarkResult.xsd file. This XSD internally uses the favorite.xsd and common.xsd schemas. The fields in the response are described below.
+
+        Success Status codes:
+        
+                200: Bookmarks(s) were successfully retrieved.
+        
+        Failure Status codes:
+        
+                400: Portal ID is not numeric or is negative.
+                401: The session ID is missing or invalid or expired.
+                403: User is not authorized to access the resource.
+                404: The Portal ID does not exist.
+                500: An internal error occurred.
+        
+        ##### **Response Headers**
+        
+        Name |	Description
+        ---- | -------------
+        X-egain-session |	Session ID of the current user session.
+        Content-Type |	application/xml or application/json. Corresponds to the Accept request header
+
+        ##### **Response Body**
+        
+        The response contains an instance of ss/bookmarkResult.
+        
+        ##### **XSD for Response Body**
+    
+        ss/bookmarkResult.xsd.
+    
+        #### (+) Examples
+        
+        ##### **Sample Response JSON**
+        
+        ```
+        {
+            "bookmark": [
+                {
+                    "resourceId": 444300000002020,
+                    "resourceType": 1,
+                    "userId": 1002,
+                    "userType": 3,
+                    "portalId": 444300000001000,
+                    "readableResourceId": "PROD-2020",
+                    "resourceName": "Mutual Funds",
+                    "id": 1001
+                }
+            ],
+            "callInfo": {
+                "httpStatus": "200",
+                "portalId": "444300000001000",
+                "resource": "bookmark",
+                "subResource": "article",
+                "resourceId": "",
+                "timestamp": "Thu Jan 08 02:30:50 GMT 2015",
+                "duration": "12",
+                "status": "success",
+                "wsVersion": "11.0",
+                "dataVersion": "3.0",
+                "userType": "AGENT"
+            },
+            "pagingInfo": {
+                "count": 0,
+                "pageNumber": 0,
+                "rangeStart": 0,
+                "rangeSize": 0,
+                "maxRange": 0
+            },
+            "deploymentInfo": {
+                "eGainSecure": false
+            }
+        }
+        ```
+        ##### **Sample Response XML**
+        
+        ```
+        &lt;!--?xml version="1.0" encoding="UTF-8" standalone="yes"?--&gt;
+        &lt;ns2:bookmarkresult xmlns:ns2="http://bindings.egain.com/ws/model/v3/gen/ss" xmlns="http://bindings.egain.com/ws/model/v3/gen/common" xmlns:ns4="http://bindings.egain.com/ws/model/v3/gen/general" xmlns:ns3="http://bindings.egain.com/ws/model/v3/gen/kb" xmlns:ns5="http://bindings.egain.com/ws/model/v3/gen/social/community" xmlns:ns6="http://bindings.egain.com/ws/model/v3/gen/gh" xmlns:ns7="http://bindings.egain.com/ws/model/v3/gen/meta"&gt;
+            &lt;callinfo&gt;
+                &lt;httpstatus&gt;200&lt;/httpstatus&gt;
+                &lt;portalid&gt;444300000001000&lt;/portalid&gt;
+                &lt;resource&gt;bookmark&lt;/resource&gt;
+                &lt;subresource&gt;article&lt;/subresource&gt;
+                &lt;resourceid&gt;&lt;/resourceid&gt;
+                &lt;timestamp&gt;Thu Jan 08 02:29:30 GMT 2015&lt;/timestamp&gt;
+                &lt;duration&gt;10&lt;/duration&gt;
+                &lt;status&gt;success&lt;/status&gt;
+                &lt;wsversion&gt;11.0&lt;/wsversion&gt;
+                &lt;dataversion&gt;3.0&lt;/dataversion&gt;
+                &lt;usertype&gt;agent&lt;/usertype&gt;
+            &lt;/callinfo&gt;
+            &lt;paginginfo&gt;
+                &lt;count&gt;0&lt;/count&gt;
+                &lt;pagenumber&gt;0&lt;/pagenumber&gt;
+                &lt;rangestart&gt;0&lt;/rangestart&gt;
+                &lt;rangesize&gt;0&lt;/rangesize&gt;
+                &lt;maxrange&gt;0&lt;/maxrange&gt;
+            &lt;/paginginfo&gt;
+            &lt;deploymentinfo&gt;
+                &lt;egainsecure&gt;false&lt;/egainsecure&gt;
+            &lt;/deploymentinfo&gt;
+            &lt;ns2:bookmark id="1001"&gt;
+                &lt;ns2:resourceid&gt;444300000002020&lt;/ns2:resourceid&gt;
+                &lt;ns2:resourcetype&gt;1&lt;/ns2:resourcetype&gt;
+                &lt;ns2:userid&gt;1002&lt;/ns2:userid&gt;
+                &lt;ns2:usertype&gt;3&lt;/ns2:usertype&gt;
+                &lt;ns2:portalid&gt;444300000001000&lt;/ns2:portalid&gt;
+                &lt;ns2:readableresourceid&gt;PROD-2020&lt;/ns2:readableresourceid&gt;
+                &lt;ns2:resourcename&gt;Mutual Funds&lt;/ns2:resourcename&gt;
+            &lt;/ns2:bookmark&gt;
+        &lt;/ns2:bookmarkresult&gt;
+        ```
