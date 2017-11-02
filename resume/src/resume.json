@@ -1,0 +1,103 @@
+{
+	"name": "Stuthi Balaji",
+	"email": "stuthibalaji@gmail.com",
+	"phone": "(510)480-6958",
+	"image": "https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAfPAAAAJDA3MmY1YmM3LTBkZmYtNGYxYS1hYWZkLWUzZjYzOGYwNzgxMg.jpg",
+  "linkedin": "https://www.linkedin.com/in/stuthibalaji/",
+  "github": "https://github.com/stuthib/React-Apps",
+	"experiences" : [
+		{
+			"title" : "Technical Solutions Engineer",
+			"period": "Mar 2016 - Present",
+			"company": "eGain Communications, Sunnyvale",
+			"details": ["Building customized web packages for small and medium scale suites.",
+                  "Web page development using eGain REST APIs to extract data and display it using AngularJs and other front-end frameworks.",
+                  "Customizable Single Sign-on using Security Assertion Markup Language(SAML).",
+                  "Designed and implemented web service which collects data from SAML response and passes it to eGain application for routing.",
+                  "Development of SDK that enables chat using SMS and Facebook Messenger using Twilio Client API and Facebook Messenger API.",
+                  "Develop interfaces to implement functionalities to cover product gap. and Backup functionalities."]
+    },
+		{
+			"title" : "Software Engineer Intern",
+			"period": "June 2015 - Dec 2015",
+			"company": "Kareo, Irvine",
+			"details": ["Developed functionality such as dynamically expandable UILabel (custom rendering) based on the input typed by the user, custom UIPickerView (remote data source) to show custom content for customer contact forms.",
+        "Developed a CG Extension, to draw shapes on images with editable properties(color, width, text). Worked extensively on UITableview with custom cells. Built purely in Objective-C using Core Graphics APIs."
+      ]
+    },
+    {
+			"title" : "Software Engineer",
+			"period": "Aug 2012 - Jul 2013",
+			"company": "Borqs, India",
+			"details": ["Developed features for android frameworks related to home screen widgets and lock screens for various network provider companies.",
+        "Developed resizable widgets that generated extendable views. Managed migration of the android frameworks from older to newer releases by reducing UI compatibility issues.",
+        "Designed and executed test procedures for enhanced launcher and app widgets by adding animation using OpenGL."
+      ]
+    }
+	],
+	"projects": [
+		{
+			"name":"Tic-Tac-toe",
+			"url": "http://programmingbuddy.club",
+			"detail": "A fun game app that that can be played by two people and is time bound."
+		},
+		{
+			"name":"To-do",
+			"url": "http://programmingbuddy.club",
+			"detail": "A todo list app helps keep track of the items that are completed and active."
+		}
+	],
+	"skills": [
+		{
+			"name": "Javascript",
+			"percent": "70%"
+		},
+    {
+			"name": "ReactJS",
+			"percent": "70%"
+		},
+		{
+			"name": "Angular",
+			"percent": "50%"
+		},
+		{
+			"name": "HTML5 & CSS",
+			"percent": "70%"
+		},
+    {
+			"name": "Java",
+			"percent": "70%"
+		}
+	],
+	"education": [
+		{
+			"degree": "MS in Computer Engineering",
+			"university": "University of California, Irvine",
+			"period": "2014 - 2015"
+		},
+		{
+			"degree": "BS in Instrumentation Engineering",
+			"university": "RNS Institute of Technology, India",
+			"period": "2008 - 2012"
+		}
+	],
+	"languages": [
+		{
+			"name":"English",
+			"details": "Native"
+		},
+		{
+			"name":"Hindi",
+			"details": "Professional"
+		},
+		{
+			"name":"French",
+			"details": "Basic"
+		}
+	],
+	"interests": [
+		"Hiking",
+		"Scuba-diving",
+		"Swimming"
+	]
+}
